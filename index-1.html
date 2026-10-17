@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Cottage Cafe by La Polo, Connaught Place, New Delhi | Unofficial Redesign Concept</title>
+<meta name="description" content="An unofficial website redesign concept for The Cottage Cafe by La Polo, Connaught Place, New Delhi: cozy café menu, story, gallery and reservations demo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ivory:#F8F3E9;--esp:#38261E;--sage:#849078;--gold:#C5A36A;--paper:#FFFBF2;--line:rgba(56,38,30,.14);--sh:0 10px 30px rgba(56,38,30,.12)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font-family:Jost,system-ui,sans-serif;background:var(--ivory);color:var(--esp);line-height:1.65;font-size:17px}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;line-height:1.1}
+h2{font-size:clamp(2rem,5vw,3.2rem);margin-bottom:.5rem}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.skip{position:absolute;left:-999px;background:var(--esp);color:#fff;padding:.6rem 1rem;z-index:99}.skip:focus{left:8px;top:8px}
+.wrap{max-width:1120px;margin:auto;padding:0 1.25rem}
+section{padding:5rem 0}
+.lead{max-width:56ch;opacity:.85}
+.note{font-size:.85rem;background:rgba(197,163,106,.2);border-left:3px solid var(--gold);padding:.6rem .9rem;border-radius:4px;margin:1rem 0;max-width:70ch}
+.btn{display:inline-block;padding:.85rem 1.6rem;border-radius:99px;text-decoration:none;font-weight:500;border:1.5px solid var(--gold);transition:.25s;cursor:pointer;font:inherit;font-weight:500}
+.btn.p{background:var(--gold);color:var(--esp)}.btn.p:hover{background:#d4b57e;transform:translateY(-2px)}
+.btn.g{color:var(--ivory)}.btn.g:hover{background:rgba(248,243,233,.15)}
+.btn.d{background:var(--esp);color:var(--ivory);border-color:var(--esp)}.btn.d:hover{background:#4d352b}
+/* nav */
+header{position:sticky;top:0;z-index:50;background:rgba(248,243,233,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:"Cormorant Garamond",serif;font-size:1.35rem;font-weight:600;text-decoration:none;line-height:1}
+.logo small{display:block;font-family:Jost;font-size:.7rem;opacity:.65;font-weight:400;margin-top:3px}
+.links{display:flex;gap:1.6rem;list-style:none;padding:0}
+.links a{text-decoration:none;font-size:.95rem;padding:.3rem 0;border-bottom:2px solid transparent}
+.links a:hover,.links a.on{border-color:var(--gold)}
+.burger{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer}
+.burger span{display:block;width:24px;height:2px;background:var(--esp);margin:5px auto;transition:.3s}
+@media(max-width:820px){.burger{display:block}
+.links{position:absolute;top:68px;left:0;right:0;background:var(--ivory);flex-direction:column;gap:0;padding:.5rem 1.25rem 1rem;border-bottom:1px solid var(--line);display:none}
+.links.open{display:flex}.links a{display:block;padding:.8rem 0}}
+/* hero */
+.hero{position:relative;min-height:88vh;display:flex;align-items:center;color:var(--ivory);padding:4rem 0;overflow:hidden;background:radial-gradient(ellipse at 75% 55%,#6b4a38 0%,#38261E 62%)}
+.hero svg.scene{position:absolute;right:0;bottom:0;width:min(62%,720px);height:auto;opacity:.95}
+.hero .wrap{position:relative;z-index:2}
+.hero h1{font-size:clamp(2.8rem,8vw,5.6rem);max-width:11ch;animation:rise 1.1s ease both}
+.hero p{max-width:34ch;font-size:1.2rem;margin:1.2rem 0 2rem;animation:rise 1.1s .2s ease both}
+.hero .row{display:flex;gap:.9rem;flex-wrap:wrap;animation:rise 1.1s .4s ease both}
+.badge{position:absolute;left:1.25rem;bottom:1rem;z-index:3;font-size:.78rem;opacity:.75}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@media(max-width:820px){.hero svg.scene{opacity:.35;width:100%}}
+/* photo placeholders */
+.ph{border-radius:14px;overflow:hidden;position:relative;box-shadow:var(--sh);display:flex;align-items:center;justify-content:center;aspect-ratio:4/3}
+.ph svg{width:46%;height:auto;opacity:.9}
+.ph i{position:absolute;left:10px;bottom:8px;font:normal .7rem Jost;background:rgba(255,251,242,.85);padding:2px 8px;border-radius:99px;color:var(--esp)}
+.t1{background:linear-gradient(135deg,#e9dcc3,#d8c29a)}.t2{background:linear-gradient(135deg,#c9d1bf,#9fab93)}.t3{background:linear-gradient(135deg,#6b4a38,#38261E)}.t4{background:linear-gradient(135deg,#f1e4d2,#e0c5a6)}
+.t3 svg *{stroke:#F8F3E9}
+/* featured */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.6rem;margin-top:2rem}
+.card{background:var(--paper);border-radius:16px;overflow:hidden;box-shadow:var(--sh);transition:.3s}
+.card:hover{transform:translateY(-4px)}
+.card .ph{border-radius:0;box-shadow:none}
+.card div.b{padding:1.1rem 1.3rem 1.4rem}
+.card h3{font-size:1.5rem}.card p{font-size:.93rem;opacity:.8}
+/* story */
+.story{background:var(--paper)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
+.split .ph{aspect-ratio:4/5}
+@media(max-width:820px){.split{grid-template-columns:1fr;gap:2rem}}
+.facts{display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:1.5rem;padding-top:1.2rem;border-top:1px solid var(--line);font-size:.92rem}
+/* categories + menu */
+.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin:2rem 0}
+.cat{background:var(--sage);color:#fff;border:0;border-radius:14px;padding:1.2rem;text-align:left;font:inherit;cursor:pointer;transition:.25s}
+.cat:hover{background:#6f7b64;transform:translateY(-3px)}
+.cat b{font-family:"Cormorant Garamond",serif;font-size:1.35rem;display:block}.cat span{font-size:.82rem;opacity:.9}
+.filters{display:flex;gap:.5rem;flex-wrap:wrap;margin:1.5rem 0 2rem}
+.f{border:1.5px solid var(--esp);background:transparent;color:var(--esp);padding:.45rem 1.05rem;border-radius:99px;font:inherit;font-size:.9rem;cursor:pointer;transition:.2s}
+.f:hover{background:rgba(56,38,30,.08)}
+.f[aria-pressed=true]{background:var(--esp);color:var(--ivory)}
+.menu{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.4rem}
+.item{background:var(--paper);border-radius:14px;overflow:hidden;box-shadow:var(--sh);animation:fade .4s ease both}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.item .ph{aspect-ratio:16/9;border-radius:0;box-shadow:none}.item .ph svg{width:30%}
+.item .b{padding:1rem 1.2rem 1.2rem}
+.top{display:flex;justify-content:space-between;gap:.8rem;align-items:baseline}
+.item h3{font-size:1.3rem}.price{color:#7a5f2c;font-weight:500;white-space:nowrap}
+.item p{font-size:.9rem;opacity:.78}
+.veg,.nv{display:inline-block;width:14px;height:14px;border:2px solid #3f7a3a;margin-right:6px;position:relative;vertical-align:-1px}
+.veg:after{content:"";position:absolute;inset:2px;border-radius:50%;background:#3f7a3a}
+.nv{border-color:#9b3b2a}.nv:after{content:"";position:absolute;inset:2px;border-radius:50%;background:#9b3b2a}
+.legend{font-size:.88rem;margin-top:1.2rem}
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1rem;margin-top:2rem}
+.gal button{border:0;padding:0;background:none;cursor:zoom-in;border-radius:14px;transition:.3s}
+.gal button:hover{transform:scale(1.02)}
+.gal .ph{aspect-ratio:1}
+.lb{position:fixed;inset:0;background:rgba(30,20,15,.92);z-index:100;display:none;align-items:center;justify-content:center;flex-direction:column;gap:1rem;color:#F8F3E9;padding:1rem}
+.lb.open{display:flex}.lb .ph{width:min(90vw,520px);aspect-ratio:1}.lb .ph svg{width:40%}
+.lb .c{display:flex;gap:.6rem;align-items:center}
+.lb button{background:none;border:1.5px solid var(--gold);color:#F8F3E9;border-radius:99px;min-width:44px;height:44px;cursor:pointer;font:inherit;padding:0 1rem}
+/* testimonials */
+.testi{background:var(--sage);color:#fff}
+.testi .note{background:rgba(255,255,255,.18);border-color:#fff}
+.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.4rem;margin-top:1.5rem}
+blockquote{background:rgba(255,255,255,.12);border-radius:14px;padding:1.5rem;font-family:"Cormorant Garamond",serif;font-size:1.3rem;line-height:1.35}
+blockquote cite{display:block;margin-top:.8rem;font:normal .82rem Jost;opacity:.85}
+/* visit */
+.visit{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
+@media(max-width:820px){.visit{grid-template-columns:1fr}}
+table{width:100%;border-collapse:collapse;margin:1rem 0}td{padding:.5rem 0;border-bottom:1px solid var(--line)}td:last-child{text-align:right}
+.map{background:linear-gradient(135deg,#e6dcc5,#d3cdb1);border-radius:16px;box-shadow:var(--sh);min-height:300px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:1.5rem}
+.map svg{position:absolute;inset:0;width:100%;height:100%}
+.map>div{position:relative;background:rgba(255,251,242,.92);padding:1rem 1.2rem;border-radius:12px}
+.row2{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:.8rem}
+/* forms */
+.res{background:var(--paper)}
+form{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin-top:1.5rem;max-width:720px}
+.full{grid-column:1/-1}
+@media(max-width:600px){form{grid-template-columns:1fr}}
+label{font-size:.9rem;font-weight:500;display:block;margin-bottom:.25rem}
+input,select,textarea{width:100%;padding:.75rem .9rem;border:1.5px solid rgba(56,38,30,.3);border-radius:10px;background:#fff;font:inherit;color:var(--esp)}
+.err{color:#9b2c1c;font-size:.82rem;min-height:1.1em;display:block}
+input[aria-invalid=true],select[aria-invalid=true]{border-color:#9b2c1c}
+.ok{display:none;grid-column:1/-1;background:#e9eee3;border:1.5px solid var(--sage);border-radius:12px;padding:1.2rem}
+.ok.show{display:block;animation:rise .5s ease}
+footer{background:var(--esp);color:var(--ivory);padding:3rem 0 2rem;font-size:.9rem}
+footer .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem}
+footer a{color:var(--gold)}
+.disc{grid-column:1/-1;border-top:1px solid rgba(248,243,233,.2);padding-top:1.2rem;opacity:.8;font-size:.82rem}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header><div class="wrap"><nav aria-label="Main">
+<a class="logo" href="#home">The Cottage Cafe<small>by La Polo · unofficial concept</small></a>
+<button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="links"><span></span><span></span><span></span></button>
+<ul class="links" id="links">
+<li><a href="#home">Home</a></li><li><a href="#story">Our Story</a></li><li><a href="#menu">Menu</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#reservations">Reservations</a></li><li><a href="#contact">Contact</a></li></ul>
+</nav></div></header>
+
+<main id="main">
+<section class="hero" id="home" style="padding:4rem 0">
+<svg class="scene" viewBox="0 0 600 420" aria-hidden="true" fill="none">
+<ellipse cx="320" cy="372" rx="260" ry="24" fill="#000" opacity=".25"/>
+<path d="M0 392h600" stroke="#C5A36A" stroke-width="2" opacity=".5"/>
+<g stroke="#C5A36A" stroke-width="3" stroke-linecap="round"><path d="M330 120c-14-22 14-34 0-58M370 124c-14-22 14-34 0-58M410 120c-14-22 14-34 0-58" opacity=".6"/></g>
+<path d="M290 170h160v70c0 52-36 90-80 90s-80-38-80-90z" fill="#F8F3E9"/>
+<path d="M450 190c46-4 52 56 0 64" stroke="#F8F3E9" stroke-width="14" fill="none" stroke-linecap="round"/>
+<ellipse cx="370" cy="170" rx="80" ry="16" fill="#8a5a3a"/><path d="M340 168c14 8 40 8 60 0-10-6-48-6-60 0z" fill="#F8F3E9" opacity=".9"/>
+<ellipse cx="370" cy="352" rx="150" ry="22" fill="#C5A36A"/><ellipse cx="370" cy="346" rx="120" ry="14" fill="#d9bd88"/>
+<g transform="translate(110 250)"><rect x="0" y="40" width="90" height="100" rx="10" fill="#849078"/><path d="M-10 40l55-44 55 44z" fill="#6f7b64"/><rect x="34" y="80" width="22" height="60" fill="#F8F3E9" opacity=".85"/><rect x="10" y="62" width="16" height="16" fill="#C5A36A"/><rect x="64" y="62" width="16" height="16" fill="#C5A36A"/></g>
+</svg>
+<div class="wrap">
+<h1>A Little Escape in the Heart of Delhi.</h1>
+<p>Good food, comforting coffee and moments worth slowing down for.</p>
+<div class="row"><a class="btn p" href="#menu">Explore Our Menu</a><a class="btn g" href="#contact">Find Us</a></div>
+</div>
+<span class="badge">Illustration placeholder. Replace with licensed photography.</span>
+</section>
+
+<section id="featured"><div class="wrap">
+<h2>Featured dishes and signature coffee</h2>
+<p class="lead">A sample selection to show how the café’s best-loved plates could be presented.</p>
+<p class="note">Sample content. Dish names, descriptions and prices are placeholders until confirmed with the café.</p>
+<div class="cards" id="featCards"></div>
+</div></section>
+
+<section class="story" id="story"><div class="wrap split">
+<div class="ph t4" role="img" aria-label="Placeholder for a warm editorial photograph of the café interior"><svg viewBox="0 0 64 64" fill="none" stroke="#38261E" stroke-width="2"><path d="M8 30L32 10l24 20M14 28v26h36V28M26 54V38h12v16"/></svg><i>Photo placeholder: interior</i></div>
+<div>
+<h2>A cottage corner, a short walk from the Circle</h2>
+<p class="lead">The Cottage Cafe by La Polo sits in Connaught Place, New Delhi. This concept imagines a calm, garden-cottage mood: soft light, wooden tables and a menu built for lingering.</p>
+<p class="lead" style="margin-top:1rem">The story below is a design placeholder. The café’s history, founders and philosophy should be supplied and approved by the owner before publishing.</p>
+<div class="facts"><span><b>Location</b><br>Connaught Place, New Delhi</span><span><b>Style</b><br>Cozy, cottage-inspired</span><span><b>Founded</b><br>To be confirmed</span></div>
+</div></div></section>
+
+<section id="menu"><div class="wrap">
+<h2>The menu</h2>
+<p class="note"><b>Sample menu.</b> Every item and price here is illustrative. Verify against the café’s real menu before any public use.</p>
+<div class="cats" id="cats"></div>
+<div class="filters" role="group" aria-label="Menu categories" id="filters"></div>
+<div class="menu" id="menuGrid" aria-live="polite"></div>
+<p class="legend"><span class="veg"></span>Vegetarian &nbsp; <span class="nv"></span>Non-vegetarian &nbsp; Prices in ₹ (sample).</p>
+</div></section>
+
+<section id="gallery" style="background:var(--paper)"><div class="wrap">
+<h2>Gallery</h2>
+<p class="lead">Tap any tile to enlarge. Use the arrow keys to browse, Esc to close.</p>
+<p class="note">Placeholder tiles. Swap in original or licensed photos of the café.</p>
+<div class="gal" id="gal"></div>
+</div></section>
+
+<section class="testi" id="testimonials"><div class="wrap">
+<h2>What guests might say</h2>
+<p class="note"><b>Sample content, not real reviews.</b> Replace with genuine, permissioned guest feedback once verified.</p>
+<div class="quotes">
+<blockquote>“Sample quote: a quiet table, a warm cup and no rush.”<cite>Sample guest, placeholder</cite></blockquote>
+<blockquote>“Sample quote: the kind of place you plan an afternoon around.”<cite>Sample guest, placeholder</cite></blockquote>
+<blockquote>“Sample quote: comforting food, gentle service.”<cite>Sample guest, placeholder</cite></blockquote>
+</div></div></section>
+
+<section id="visit"><div class="wrap">
+<h2>Visit</h2>
+<div class="visit">
+<div>
+<p class="lead">Connaught Place, New Delhi. Exact address and entrance details to be confirmed.</p>
+<table aria-label="Opening hours (unverified)"><caption style="text-align:left;font-size:.85rem;opacity:.75;padding:.5rem 0">Opening hours: unverified placeholder</caption>
+<tr><td>Monday to Friday</td><td>Hours to be confirmed</td></tr><tr><td>Saturday</td><td>Hours to be confirmed</td></tr><tr><td>Sunday</td><td>Hours to be confirmed</td></tr></table>
+<p class="note">Visitor information such as parking, accessibility and nearest metro should be added after confirmation. Please check with the café directly before travelling.</p>
+</div>
+<div class="map" role="img" aria-label="Stylised map placeholder of Connaught Place">
+<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true" fill="none" stroke="#849078" stroke-width="6" opacity=".6"><circle cx="200" cy="130" r="50"/><circle cx="200" cy="130" r="95"/><path d="M200 0v300M0 130h400M80 10l240 240M320 10L80 250" stroke-width="3"/></svg>
+<div><b>The Cottage Cafe by La Polo</b><br>Connaught Place, New Delhi
+<div class="row2"><a class="btn d" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=The+Cottage+Cafe+by+La+Polo+Connaught+Place+New+Delhi">Open in Maps</a><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=The+Cottage+Cafe+by+La+Polo+Connaught+Place+New+Delhi">Get directions</a></div></div>
+</div></div></div></section>
+
+<section class="res" id="reservations"><div class="wrap">
+<h2>Reservations</h2>
+<p class="note"><b>Demo only.</b> This form does not send or store anything. A real booking system (for example a restaurant booking service, or a form backend connected to the café’s email or phone line) is required to take reservations.</p>
+<form id="rf" novalidate>
+<div><label for="d">Date</label><input type="date" id="d" required><span class="err" id="e-d"></span></div>
+<div><label for="t">Time</label><input type="time" id="t" required><span class="err" id="e-t"></span></div>
+<div><label for="g">Guests</label><select id="g" required><option value="">Select</option></select><span class="err" id="e-g"></span></div>
+<div><label for="n">Full name</label><input id="n" autocomplete="name" required><span class="err" id="e-n"></span></div>
+<div><label for="p">Phone</label><input id="p" type="tel" inputmode="tel" autocomplete="tel" placeholder="10-digit mobile number" required><span class="err" id="e-p"></span></div>
+<div><label for="m">Email (optional)</label><input id="m" type="email" autocomplete="email"><span class="err" id="e-m"></span></div>
+<div class="full"><button class="btn d" type="submit">Request demo reservation</button></div>
+<div class="ok" id="ok" role="status" tabindex="-1"></div>
+</form></div></section>
+
+<section id="contact"><div class="wrap">
+<h2>Contact</h2>
+<p class="lead">Phone, email and social links are intentionally not shown. They will be added as clickable links only after the café confirms them.</p>
+<div class="cards">
+<div class="card"><div class="b"><h3>Phone</h3><p>To be verified</p></div></div>
+<div class="card"><div class="b"><h3>Email</h3><p>To be verified</p></div></div>
+<div class="card"><div class="b"><h3>Social media</h3><p>Instagram and Facebook links to be added after verification</p></div></div>
+</div></div></section>
+</main>
+
+<footer><div class="wrap">
+<div><div class="logo" style="font-size:1.5rem">The Cottage Cafe<small>by La Polo</small></div><p style="margin-top:.8rem;opacity:.8">A little escape in the heart of Delhi.</p></div>
+<div><b>Explore</b><br><a href="#story">Our Story</a><br><a href="#menu">Menu</a><br><a href="#gallery">Gallery</a><br><a href="#reservations">Reservations</a><br><a href="#contact">Contact</a></div>
+<div><b>Find us</b><br>Connaught Place, New Delhi<br><a href="#visit">Hours and map</a></div>
+<p class="disc">Unofficial redesign concept. Not affiliated with, endorsed by or authorised by The Cottage Cafe or La Polo. All names belong to their owners. Menu, prices, hours, reviews and imagery are placeholders pending verification.</p>
+</div></footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Gallery viewer"><div class="ph" id="lbp"></div><p id="lbc"></p><div class="c"><button id="pv" aria-label="Previous">←</button><button id="cl">Close</button><button id="nx" aria-label="Next">→</button></div></div>
+
+<script>
+const $=s=>document.querySelector(s);
+const ic={
+cup:'<svg viewBox="0 0 64 64" fill="none" stroke="#38261E" stroke-width="2.5" stroke-linecap="round"><path d="M12 24h34v14a14 14 0 0 1-14 14h-6a14 14 0 0 1-14-14zM46 28h4a6 6 0 0 1 0 12h-4M22 8c-3 4 3 6 0 10M32 8c-3 4 3 6 0 10"/></svg>',
+leaf:'<svg viewBox="0 0 64 64" fill="none" stroke="#38261E" stroke-width="2.5" stroke-linecap="round"><path d="M10 54C10 26 28 10 54 10c0 26-16 44-44 44zM10 54L36 28"/></svg>',
+plate:'<svg viewBox="0 0 64 64" fill="none" stroke="#38261E" stroke-width="2.5" stroke-linecap="round"><circle cx="32" cy="32" r="22"/><circle cx="32" cy="32" r="12"/></svg>',
+pizza:'<svg viewBox="0 0 64 64" fill="none" stroke="#38261E" stroke-width="2.5" stroke-linecap="round"><path d="M32 56L8 16c14-10 34-10 48 0z"/><circle cx="26" cy="26" r="3"/><circle cx="38" cy="30" r="3"/></svg>',
+cake:'<svg viewBox="0 0 64 64" fill="none" stroke="#38261E" stroke-width="2.5" stroke-linecap="round"><path d="M10 34h44v20H10zM10 34c6-8 12 4 18-4s12 4 26 0M32 12v10"/></svg>',
+glass:'<svg viewBox="0 0 64 64" fill="none" stroke="#38261E" stroke-width="2.5" stroke-linecap="round"><path d="M16 10h32l-5 44H21zM18 24h28M40 4l-6 22"/></svg>'};
+const tone=['t1','t2','t3','t4'];
+const C=["Coffee","Tea","Beverages","Breakfast","Sandwiches","Pizza","Pasta","Main courses","Desserts"];
+const cic={Coffee:'cup',Tea:'leaf',Beverages:'glass',Breakfast:'plate',Sandwiches:'plate',Pizza:'pizza',Pasta:'plate','Main courses':'plate',Desserts:'cake'};
+// SAMPLE items only. [category, name, description, price, veg, featured]
+const M=[
+["Coffee","Cottage Cappuccino","Sample: velvety espresso with silky milk foam.",220,1,1],
+["Coffee","Iced Caramel Latte","Sample: chilled espresso, milk and caramel.",260,1],
+["Tea","Garden Herbal Infusion","Sample: a calming pot of herbs and flowers.",190,1],
+["Tea","Masala Chai","Sample: spiced milk tea, brewed slow.",150,1],
+["Beverages","Fresh Lime Soda","Sample: sweet, salted or mixed.",140,1],
+["Beverages","Berry Cooler","Sample: seasonal berries, mint and soda.",230,1],
+["Breakfast","Garden Omelette","Sample: herbs, vegetables, toasted bread.",320,0],
+["Breakfast","Honey Pancake Stack","Sample: warm pancakes with honey and fruit.",340,1,1],
+["Sandwiches","Grilled Cheese and Tomato","Sample: toasted sourdough, melted cheese.",300,1],
+["Sandwiches","Chicken Club","Sample: layered, toasted, with salad.",380,0],
+["Pizza","Margherita","Sample: tomato, mozzarella, basil.",420,1,1],
+["Pizza","Chicken Tikka Pizza","Sample: smoky chicken, onion, peppers.",490,0],
+["Pasta","Creamy Mushroom Penne","Sample: mushrooms in a light cream sauce.",410,1],
+["Pasta","Arrabbiata","Sample: spicy tomato, garlic, chilli.",390,1],
+["Main courses","Herb Roast Chicken Plate","Sample: roast chicken, vegetables, jus.",560,0],
+["Main courses","Paneer Steak","Sample: grilled paneer, sauté vegetables.",520,1],
+["Desserts","Warm Chocolate Brownie","Sample: brownie with vanilla ice cream.",280,1,1],
+["Desserts","Seasonal Fruit Tart","Sample: buttery tart, vanilla cream.",300,1]];
+const ph=(c,i,n)=>`<div class="ph ${tone[i%4]}" role="img" aria-label="Photo placeholder for ${n}">${ic[cic[c]]}<i>Photo placeholder</i></div>`;
+$('#featCards').innerHTML=M.filter(m=>m[5]).map((m,i)=>`<article class="card">${ph(m[0],i,m[1])}<div class="b"><h3>${m[1]}</h3><p>${m[2]}</p><p class="price">₹${m[3]} (sample)</p></div></article>`).join('');
+$('#cats').innerHTML=C.map(c=>`<button class="cat" data-c="${c}"><b>${c}</b><span>${M.filter(m=>m[0]==c).length} sample items</span></button>`).join('');
+let cur='All';
+function render(){
+ $('#menuGrid').innerHTML=M.filter(m=>cur=='All'||m[0]==cur).map((m,i)=>`<article class="item">${ph(m[0],i,m[1]).replace('class="ph','class="ph')}<div class="b"><div class="top"><h3><span class="${m[4]?'veg':'nv'}" role="img" aria-label="${m[4]?'Vegetarian':'Non-vegetarian'}"></span>${m[1]}</h3><span class="price">₹${m[3]}</span></div><p>${m[2]}</p></div></article>`).join('');
+ document.querySelectorAll('.f').forEach(b=>b.setAttribute('aria-pressed',b.dataset.c==cur));
+}
+$('#filters').innerHTML=['All',...C].map(c=>`<button class="f" data-c="${c}" aria-pressed="false">${c}</button>`).join('');
+$('#filters').onclick=e=>{const b=e.target.closest('.f');if(b){cur=b.dataset.c;render()}};
+$('#cats').onclick=e=>{const b=e.target.closest('.cat');if(b){cur=b.dataset.c;render();$('#filters').scrollIntoView({behavior:'smooth'})}};
+render();
+// nav
+const bg=$('.burger'),ln=$('#links');
+bg.onclick=()=>{const o=ln.classList.toggle('open');bg.setAttribute('aria-expanded',o);bg.setAttribute('aria-label',o?'Close menu':'Open menu')};
+ln.onclick=e=>{if(e.target.tagName=='A'){ln.classList.remove('open');bg.setAttribute('aria-expanded',false)}};
+const secs=[...document.querySelectorAll('main section[id]')];
+addEventListener('scroll',()=>{let id='home';secs.forEach(s=>{if(s.getBoundingClientRect().top<120)id=s.id});
+ document.querySelectorAll('.links a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')=='#'+id||(id=='featured'&&a.hash=='#menu')))},{passive:true});
+// gallery
+const G=[["Cozy corner table","leaf","t1"],["Pour-over coffee","cup","t3"],["Window seat","plate","t2"],["Margherita pizza","pizza","t4"],["Chocolate brownie","cake","t3"],["Garden-style interior","leaf","t2"],["Latte art","cup","t1"],["Berry cooler","glass","t4"]];
+$('#gal').innerHTML=G.map((g,i)=>`<button data-i="${i}" aria-label="Open placeholder: ${g[0]}"><div class="ph ${g[2]}">${ic[g[1]]}<i>${g[0]}</i></div></button>`).join('');
+let li=0,last;
+const lb=$('#lb');
+function show(i){li=(i+G.length)%G.length;const g=G[li];$('#lbp').className='ph '+g[2];$('#lbp').innerHTML=ic[g[1]]+'<i>Photo placeholder</i>';$('#lbc').textContent=g[0]+' ('+(li+1)+' of '+G.length+')'}
+$('#gal').onclick=e=>{const b=e.target.closest('button');if(b){last=b;show(+b.dataset.i);lb.classList.add('open');$('#cl').focus()}};
+const close=()=>{lb.classList.remove('open');last&&last.focus()};
+$('#cl').onclick=close;$('#pv').onclick=()=>show(li-1);$('#nx').onclick=()=>show(li+1);
+lb.onclick=e=>{if(e.target==lb)close()};
+addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key=='Escape')close();if(e.key=='ArrowLeft')show(li-1);if(e.key=='ArrowRight')show(li+1)});
+// reservation
+const gs=$('#g');for(let i=1;i<=10;i++)gs.add(new Option(i+(i==1?' guest':' guests'),i));gs.add(new Option('More than 10 (call to confirm)','10+'));
+const tdy=new Date();tdy.setMinutes(tdy.getMinutes()-tdy.getTimezoneOffset());$('#d').min=tdy.toISOString().slice(0,10);
+$('#rf').addEventListener('submit',e=>{
+ e.preventDefault();let bad=null;const ok=$('#ok');ok.classList.remove('show');
+ const chk=(id,fail,msg)=>{const el=$('#'+id),er=$('#e-'+id);er.textContent=fail?msg:'';el.setAttribute('aria-invalid',!!fail);if(fail&&!bad)bad=el};
+ chk('d',!$('#d').value||$('#d').value<$('#d').min,'Choose today or a future date.');
+ chk('t',!$('#t').value,'Choose a time.');
+ chk('g',!$('#g').value,'Select the number of guests.');
+ chk('n',$('#n').value.trim().length<2,'Enter your full name.');
+ chk('p',!/^(\+?91[\s-]?)?[6-9]\d{9}$/.test($('#p').value.replace(/[\s-]/g,'').replace(/^\+?91/,m=>m)),'Enter a valid 10-digit Indian mobile number.');
+ chk('m',$('#m').value&&!/^\S+@\S+\.\S+$/.test($('#m').value),'Enter a valid email address.');
+ if(bad){bad.focus();return}
+ const d=new Date($('#d').value+'T00:00').toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long'});
+ ok.innerHTML=`<b>Demo confirmation</b><br>Thank you, ${$('#n').value.trim().replace(/[<>&]/g,'')}. This is how your request for ${$('#g').value} on ${d} at ${$('#t').value} would appear. <b>Nothing was sent and no table is booked.</b> Please contact the café directly for a real reservation.`;
+ ok.classList.add('show');ok.focus();
+});
+</script>
+</body>
+</html>
